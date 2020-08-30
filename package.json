@@ -1,0 +1,29 @@
+{
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "cross-env NODE_ENV=production run-p build:*",
+    "test": "jest",
+    "dev": "cross-env NODE_ENV=development run-s dev:*",
+    "dev:snowpack": "snowpack dev",
+    "dev:server": "npx servor --reload",
+    "dev:css": "tailwindcss build src/style.css -o public/output.css",
+    "build:styles": "npx postcss src/style.css -o public/output.css",
+    "build:module": "npx snowpack build --clean"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.2",
+    "npm-run-all": "^4.1.5",
+    "svelte": "^3.21.0"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.2.0",
+    "@snowpack/app-scripts-svelte": "^1.1.4",
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/svelte": "^3.0.0",
+    "jest": "^25.4.0",
+    "postcss-cli": "^7.1.1",
+    "servor": "^3.2.0",
+    "snowpack": "^2.3.1",
+    "tailwindcss": "^1.4.6"
+  }
+}
